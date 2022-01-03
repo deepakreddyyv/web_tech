@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <title>Navigation</title>
+  <body>
+    <p>Click the button to display the code name of your browser.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo3"></p>
+
+    <script>
+      let lati = "";
+      let long = "";
+      navigator.geolocation.getCurrentPosition(showPosition);
+      function myFunction() {
+        document.getElementById("demo3").innerHTML =
+          "Browser:" +
+          navigator.appCodeName +
+          "<hr/>Online:" +
+          navigator.onLine +
+          "<hr/>Cookies Enabled: " +
+          navigator.cookieEnabled +
+          "<hr/>Language: " +
+          navigator.language +
+          "<hr>Engine: " +
+          navigator.product +
+          "<hr>Latitude:" +
+          lati +
+          "<hr>Longitude:" +
+          long;
+      }
+
+      function showPosition(position) {
+        lati = position.coords.latitude;
+        long = position.coords.longitude;
+      }
+    </script>
+  </body>
+</html>

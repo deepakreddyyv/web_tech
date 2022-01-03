@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+        margin-top: 100px;
+    }
+
+</style>
+<body>
+    <form action="" onsubmit="return validate()" name="forms">
+        <table>
+            <tr>
+                <td>Mobile Number : </td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Email : </td>
+                <td><input type="text" name="pass" id="pass"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+            <tr>
+                <p id="p"></p>
+            </tr>
+        </table>
+    </form>
+</body>
+
+<script>
+    function validate() {
+    var mobile_number = document.getElementById("name").value;
+    var email = document.getElementById("pass").value;
+
+    let regx = /^\d{10}$/;
+    let regx1 = /^[A-Za-z1-9\._]+@[A-Za-z0-9]+.[A-Za-z]/;
+
+    if(regx1.test(email) && (regx.test(mobile_number))) {
+        alert("valid user credentials");
+    } else {
+        alert("invalid user credentials")
+    }
+
+}
+</script>
+</html>

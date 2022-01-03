@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    form {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      border: 3px solid green;
+    }
+  </style>
+  <body>
+    <form action="" onclick="return compute()">
+      <table>
+        <tr>
+          <td>Principle Amount :</td>
+          <td><input type="text" id="amt" /></td>
+        </tr>
+        <tr>
+          <td>Time :</td>
+          <td><input type="text" id="time" /></td>
+        </tr>
+        <tr>
+          <td>Rate :</td>
+          <td><input type="text" id="rate" /></td>
+        </tr>
+      </table>
+
+      <p id="emi"></p>
+
+      <button type="button">Calculate</button>
+    </form>
+  </body>
+
+  <script>
+    function compute() {
+      var amt = parseInt(document.getElementById("amt").value);
+      var time = parseInt(document.getElementById("time").value);
+      var rate = parseInt(document.getElementById("rate").value);
+
+      var intr = amt / time;
+      var temi = (rate / time / 100) * amt;
+
+      document.getElementById("emi").innerHTML =
+        "<p> EMI : " + Math.round(intr + temi) + "</p>";
+    }
+  </script>
+</html>

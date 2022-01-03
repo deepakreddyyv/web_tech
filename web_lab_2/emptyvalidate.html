@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        margin: auto;
+        width: 50%;
+        border: 3px solid green;
+        padding: 10px;
+    }
+</style>
+<script>
+    function validate() {
+        var name = document.getElementById("name").value;
+        var pass = document.getElementById("pass").value;
+
+        if(name === "" && pass === "") {
+            alert("Fields cannot be empty");
+        } else {
+            alert("Validated");
+        }
+    }
+</script>
+<body>
+    <form action="" onsubmit="return validate()" name="forms">
+        <table>
+            <tr>
+                <td>Name : </td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Password : </td>
+                <td><input type="password" name="pass" id="pass"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
